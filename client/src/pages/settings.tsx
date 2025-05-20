@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { Header } from "@/components/header";
 import { useAuth } from "@/hooks/use-auth";
 import { useForm } from "react-hook-form";
@@ -22,8 +22,6 @@ import { Loader2, Save, User, Shield, Moon, Sun } from "lucide-react";
 import { useMutation, useQueryClient } from "@tanstack/react-query";
 import { apiRequest } from "@/lib/api";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
-// Import theme components
-import { useTheme as useNextTheme } from "next-themes";
 import { Separator } from "@/components/ui/separator";
 
 // Profile form schema
@@ -155,8 +153,15 @@ export default function Settings() {
   }
 
   const toggleTheme = () => {
-    setTheme(theme === "light" ? "dark" : "light");
+    setCurrentTheme(currentTheme === "light" ? "dark" : "light");
   };
+  
+  // Effect to apply theme change
+  useEffect(() => {
+    const root = window.document.documentElement;
+    root.classList.remove("light", "dark");
+    root.classList.add(currentTheme);
+  }, [currentTheme]);
 
   return (
     <div className="p-4 md:p-6 max-w-7xl mx-auto">
@@ -349,15 +354,15 @@ export default function Settings() {
                   <h3 className="text-lg font-medium mb-4">Theme</h3>
                   <div className="flex items-center justify-between">
                     <div className="flex items-center space-x-2">
-                      {theme === "light" ? (
+                      {currentTheme === "light" ? (
                         <Sun className="h-5 w-5 text-orange-500" />
                       ) : (
                         <Moon className="h-5 w-5 text-indigo-400" />
                       )}
-                      <span>{theme === "light" ? "Light Mode" : "Dark Mode"}</span>
+                      <span>{currentTheme === "light" ? "Light Mode" : "Dark Mode"}</span>
                     </div>
                     <Button variant="outline" onClick={toggleTheme}>
-                      Switch to {theme === "light" ? "Dark" : "Light"} Mode
+                      Switch to {currentTheme === "light" ? "Dark" : "Light"} Mode
                     </Button>
                   </div>
                 </div>
