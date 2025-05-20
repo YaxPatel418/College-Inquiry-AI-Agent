@@ -1,0 +1,31 @@
+Warning: validateDOMNesting(...): <a> cannot appear as a descendant of &lt;a&gt;.
+    at a
+    at a
+    at https://94b4f543-1b3d-4ea0-bec0-68759427ffab-00-3ckm8gsn0h35a.janeway.replit.dev/@fs/home/runner/workspace/node_modules/.vite/deps/wouter.js?v=a8b2ba2a:337:18
+    at div
+    at div
+    at div
+    at div
+    at div
+    at _c9 (https://94b4f543-1b3d-4ea0-bec0-68759427ffab-00-3ckm8gsn0h35a.janeway.replit.dev/src/components/ui/card.tsx:114:12)
+    at div
+    at _c (https://94b4f543-1b3d-4ea0-bec0-68759427ffab-00-3ckm8gsn0h35a.janeway.replit.dev/src/components/ui/card.tsx:20:11)
+    at CourseOverview (https://94b4f543-1b3d-4ea0-bec0-68759427ffab-00-3ckm8gsn0h35a.janeway.replit.dev/src/components/dashboard/course-overview.tsx:23:3)
+    at div
+    at div
+    at div
+    at Dashboard (https://94b4f543-1b3d-4ea0-bec0-68759427ffab-00-3ckm8gsn0h35a.janeway.replit.dev/src/pages/dashboard.tsx?t=1747734553183:35:20)
+    at PrivateRoute (https://94b4f543-1b3d-4ea0-bec0-68759427ffab-00-3ckm8gsn0h35a.janeway.replit.dev/src/App.tsx?t=1747734685697&v=6kdafcNpjI2K12E5ZywKb:35:36)
+    at Route (https://94b4f543-1b3d-4ea0-bec0-68759427ffab-00-3ckm8gsn0h35a.janeway.replit.dev/@fs/home/runner/workspace/node_modules/.vite/deps/wouter.js?v=a8b2ba2a:323:16)
+    at Switch (https://94b4f543-1b3d-4ea0-bec0-68759427ffab-00-3ckm8gsn0h35a.janeway.replit.dev/@fs/home/runner/workspace/node_modules/.vite/deps/wouter.js?v=a8b2ba2a:379:17)
+    at AppRoutes
+    at main
+    at div
+    at div
+    at Provider (https://94b4f543-1b3d-4ea0-bec0-68759427ffab-00-3ckm8gsn0h35a.janeway.replit.dev/@fs/home/runner/workspace/node_modules/.vite/deps/chunk-OXZDJRWN.js?v=a8b2ba2a:38:15)
+    at TooltipProvider (https://94b4f543-1b3d-4ea0-bec0-68759427ffab-00-3ckm8gsn0h35a.janeway.replit.dev/@fs/home/runner/workspace/node_modules/.vite/deps/@radix-ui_react-tooltip.js?v=a8b2ba2a:62:5)
+    at App (https://94b4f543-1b3d-4ea0-bec0-68759427ffab-00-3ckm8gsn0h35a.janeway.replit.dev/src/App.tsx?t=1747734685697&v=6kdafcNpjI2K12E5ZywKb:196:31)
+    at AuthProvider (https://94b4f543-1b3d-4ea0-bec0-68759427ffab-00-3ckm8gsn0h35a.janeway.replit.dev/src/hooks/use-auth.tsx?v=6kdafcNpjI2K12E5ZywKb:22:32)
+    at ThemeProvider (https://94b4f543-1b3d-4ea0-bec0-68759427ffab-00-3ckm8gsn0h35a.janeway.replit.dev/src/hooks/use-theme.tsx?v=6kdafcNpjI2K12E5ZywKb:20:33)
+    at QueryClientProvider (https://94b4f543-1b3d-4ea0-bec0-68759427ffab-00-3ckm8gsn0h35a.janeway.replit.dev/@fs/home/runner/workspace/node_modules/.vite/deps/@tanstack_react-query.js?v=a8b2ba2a:2805:3)
+    at AppWithProviders

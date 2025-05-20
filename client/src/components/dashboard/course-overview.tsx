@@ -113,7 +113,7 @@ export function CourseOverview({
                 </span>
               </div>
             </div>
-            <Progress value={courseStats.pending.percentage} className="h-2 bg-secondary-100" indicatorClassName="bg-secondary-500" />
+            <Progress value={courseStats.pending.percentage} className="h-2 bg-secondary-100" indicatorClassname="bg-secondary-500" />
           </div>
           
           {/* Archived Courses */}
@@ -130,7 +130,7 @@ export function CourseOverview({
                 </span>
               </div>
             </div>
-            <Progress value={courseStats.archived.percentage} className="h-2 bg-neutral-100" indicatorClassName="bg-neutral-400" />
+            <Progress value={courseStats.archived.percentage} className="h-2 bg-neutral-100" indicatorClassname="bg-neutral-400" />
           </div>
           
           {/* Popular Courses */}
@@ -146,10 +146,8 @@ export function CourseOverview({
                       <p className="font-medium">{course.title}</p>
                       <p className="text-sm text-neutral-500">{course.studentCount} students</p>
                     </div>
-                    <Link href={`/courses/${course.id}`}>
-                      <a className="bg-primary-600 h-8 w-8 rounded-full flex items-center justify-center text-white">
-                        <ChevronRight className="h-4 w-4" />
-                      </a>
+                    <Link href={`/courses/${course.id}`} className="bg-primary-600 h-8 w-8 rounded-full flex items-center justify-center text-white">
+                      <ChevronRight className="h-4 w-4" />
                     </Link>
                   </div>
                 ))
