@@ -66,8 +66,8 @@ export function Sidebar() {
   const NavItems = () => (
     <>
       <div className="p-4 border-b border-primary-700">
-        <Link href="/dashboard">
-          <a className="text-xl font-heading font-bold text-white">College Management</a>
+        <Link href="/dashboard" className="text-xl font-heading font-bold text-white">
+          College Management
         </Link>
       </div>
       
@@ -83,14 +83,16 @@ export function Sidebar() {
           {navigation.map((item) => {
             const isActive = location === item.href;
             return (
-              <Link key={item.href} href={item.href}>
-                <a className={cn(
+              <Link 
+                key={item.href} 
+                href={item.href}
+                className={cn(
                   "flex items-center px-4 py-3 text-white",
                   isActive ? "bg-primary-700" : "hover:bg-primary-700/70"
-                )}>
-                  <item.icon className="h-5 w-5 mr-3" />
-                  {item.label}
-                </a>
+                )}
+              >
+                <item.icon className="h-5 w-5 mr-3" />
+                {item.label}
               </Link>
             );
           })}
@@ -128,8 +130,8 @@ export function Sidebar() {
     <>
       {/* Mobile header */}
       <div className="md:hidden bg-primary-600 text-white p-4 w-full fixed top-0 z-10 flex items-center justify-between">
-        <Link href="/dashboard">
-          <a className="text-xl font-heading font-bold">College Management</a>
+        <Link href="/dashboard" className="text-xl font-heading font-bold">
+          College Management
         </Link>
         <Button
           variant="ghost"
