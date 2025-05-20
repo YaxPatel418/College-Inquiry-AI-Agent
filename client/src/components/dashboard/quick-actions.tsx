@@ -108,13 +108,15 @@ export function QuickActions() {
       <CardContent>
         <div className="grid grid-cols-2 gap-4">
           {displayActions.map((action, index) => (
-            <Link key={index} href={action.href}>
-              <a className="bg-neutral-50 p-4 rounded-xl flex flex-col items-center justify-center hover:bg-neutral-100 transition-colors">
-                <div className={`h-10 w-10 ${action.bgColor} ${action.color} rounded-lg flex items-center justify-center mb-2`}>
-                  {action.icon}
-                </div>
-                <span className="text-sm font-medium">{action.title}</span>
-              </a>
+            <Link 
+              key={index} 
+              href={action.href}
+              className="bg-neutral-50 p-4 rounded-xl flex flex-col items-center justify-center hover:bg-neutral-100 transition-colors"
+            >
+              <div className={`h-10 w-10 ${action.bgColor} ${action.color} rounded-lg flex items-center justify-center mb-2`}>
+                {action.icon}
+              </div>
+              <span className="text-sm font-medium">{action.title}</span>
             </Link>
           ))}
         </div>

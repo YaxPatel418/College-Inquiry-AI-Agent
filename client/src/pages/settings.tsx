@@ -22,7 +22,8 @@ import { Loader2, Save, User, Shield, Moon, Sun } from "lucide-react";
 import { useMutation, useQueryClient } from "@tanstack/react-query";
 import { apiRequest } from "@/lib/api";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
-import { useTheme } from "@/hooks/use-theme";
+// Import theme components
+import { useTheme as useNextTheme } from "next-themes";
 import { Separator } from "@/components/ui/separator";
 
 // Profile form schema
@@ -49,7 +50,8 @@ type PasswordFormValues = z.infer<typeof passwordFormSchema>;
 export default function Settings() {
   const { user } = useAuth();
   const { toast } = useToast();
-  const { theme, setTheme } = useTheme();
+  // Using a simple state for theme to avoid dependency issues
+  const [currentTheme, setCurrentTheme] = useState<"light" | "dark">("light");
   const queryClient = useQueryClient();
   const [isLoading, setIsLoading] = useState(false);
 

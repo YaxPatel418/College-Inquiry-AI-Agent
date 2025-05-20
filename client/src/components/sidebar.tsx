@@ -65,14 +65,14 @@ export function Sidebar() {
 
   const NavItems = () => (
     <>
-      <div className="p-4 border-b border-primary-700">
+      <div className="p-4 border-b border-indigo-700">
         <Link href="/dashboard" className="text-xl font-heading font-bold text-white">
           College Management
         </Link>
       </div>
       
       <div className="py-4 flex-1">
-        <p className="px-4 text-xs font-semibold uppercase tracking-wider text-primary-100 mb-2">
+        <p className="px-4 text-xs font-semibold uppercase tracking-wider text-indigo-200 mb-2">
           {user?.role === "admin" 
             ? "Admin Dashboard" 
             : user?.role === "faculty" 
@@ -88,7 +88,7 @@ export function Sidebar() {
                 href={item.href}
                 className={cn(
                   "flex items-center px-4 py-3 text-white",
-                  isActive ? "bg-primary-700" : "hover:bg-primary-700/70"
+                  isActive ? "bg-indigo-700" : "hover:bg-indigo-700/70"
                 )}
               >
                 <item.icon className="h-5 w-5 mr-3" />
@@ -99,25 +99,25 @@ export function Sidebar() {
         </nav>
       </div>
 
-      <div className="p-4 border-t border-primary-700">
+      <div className="p-4 border-t border-indigo-700">
         <div className="flex items-center">
           <Avatar className="h-8 w-8 mr-2">
             {user?.profileImage ? (
               <AvatarImage src={user.profileImage} alt={user?.name} />
             ) : (
-              <AvatarFallback className="bg-primary-700 text-white">
+              <AvatarFallback className="bg-indigo-700 text-white">
                 {user?.name?.charAt(0) || "U"}
               </AvatarFallback>
             )}
           </Avatar>
           <div>
             <p className="text-sm font-medium text-white">{user?.name}</p>
-            <p className="text-xs text-primary-200 capitalize">{user?.role}</p>
+            <p className="text-xs text-indigo-200 capitalize">{user?.role}</p>
           </div>
         </div>
         <Button
           onClick={logout}
-          className="mt-3 w-full flex items-center justify-center px-4 py-2 text-sm bg-primary-700 rounded-md hover:bg-primary-800"
+          className="mt-3 w-full flex items-center justify-center px-4 py-2 text-sm bg-indigo-700 rounded-md hover:bg-indigo-800"
         >
           <LogOut className="h-4 w-4 mr-2" />
           Logout
@@ -129,13 +129,13 @@ export function Sidebar() {
   return (
     <>
       {/* Mobile header */}
-      <div className="md:hidden bg-primary-600 text-white p-4 w-full fixed top-0 z-10 flex items-center justify-between">
+      <div className="md:hidden bg-indigo-600 text-white p-4 w-full fixed top-0 z-10 flex items-center justify-between">
         <Link href="/dashboard" className="text-xl font-heading font-bold">
           College Management
         </Link>
         <Button
           variant="ghost"
-          className="text-white hover:bg-primary-700 p-1"
+          className="text-white hover:bg-indigo-700 p-1"
           onClick={() => setMobileOpen(!mobileOpen)}
         >
           <Menu className="h-6 w-6" />
@@ -143,19 +143,19 @@ export function Sidebar() {
       </div>
 
       {/* Desktop sidebar */}
-      <aside className="hidden md:flex md:w-64 flex-col bg-primary-600 text-white h-screen sticky top-0">
+      <aside className="hidden md:flex md:w-64 flex-col bg-indigo-600 text-white h-screen sticky top-0">
         <NavItems />
       </aside>
 
       {/* Mobile sidebar */}
       {mobileOpen && (
         <div className="fixed inset-0 bg-neutral-800 bg-opacity-75 z-50 md:hidden">
-          <div className="fixed inset-y-0 left-0 max-w-xs w-full bg-primary-600 text-white shadow-xl transform transition ease-in-out duration-300">
-            <div className="flex justify-between items-center p-4 border-b border-primary-700">
+          <div className="fixed inset-y-0 left-0 max-w-xs w-full bg-indigo-600 text-white shadow-xl transform transition ease-in-out duration-300">
+            <div className="flex justify-between items-center p-4 border-b border-indigo-700">
               <h1 className="text-xl font-heading font-bold">College Management</h1>
               <Button 
                 variant="ghost" 
-                className="text-white hover:bg-primary-700 p-1"
+                className="text-white hover:bg-indigo-700 p-1"
                 onClick={() => setMobileOpen(false)}
               >
                 <X className="h-6 w-6" />
