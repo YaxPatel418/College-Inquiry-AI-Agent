@@ -22,14 +22,19 @@ import NotFound from "@/pages/not-found";
 // Route Guard for authenticated routes
 const PrivateRoute = ({ component: Component, roles = [], ...rest }: any) => {
   const { user, isAuthenticated, isLoading } = useAuth();
-  const [location, setLocation] = useLocation();
+  const [, setLocation] = useLocation();
+
+  useEffect(() => {
+    if (!isLoading && !isAuthenticated) {
+      setLocation("/login");
+    }
+  }, [isLoading, isAuthenticated, setLocation]);
 
   if (isLoading) {
     return <div className="flex h-screen items-center justify-center">Loading...</div>;
   }
 
   if (!isAuthenticated) {
-    setLocation("/login");
     return null;
   }
 

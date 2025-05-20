@@ -246,36 +246,34 @@ export default function Reports() {
               <CardTitle>Report Generation</CardTitle>
               <CardDescription>View and export detailed reports</CardDescription>
             </div>
-            <TabsList>
-              <TabsTrigger 
-                value="attendance" 
-                onClick={() => setActiveTab("attendance")}
-                className={activeTab === "attendance" ? "data-[state=active]:bg-primary-600" : ""}
-              >
-                Attendance
-              </TabsTrigger>
-              <TabsTrigger 
-                value="grades" 
-                onClick={() => setActiveTab("grades")}
-                className={activeTab === "grades" ? "data-[state=active]:bg-primary-600" : ""}
-              >
-                Grades
-              </TabsTrigger>
-              <TabsTrigger 
-                value="courses" 
-                onClick={() => setActiveTab("courses")}
-                className={activeTab === "courses" ? "data-[state=active]:bg-primary-600" : ""}
-              >
-                Courses
-              </TabsTrigger>
-              <TabsTrigger 
-                value="students" 
-                onClick={() => setActiveTab("students")}
-                className={activeTab === "students" ? "data-[state=active]:bg-primary-600" : ""}
-              >
-                Students
-              </TabsTrigger>
-            </TabsList>
+            <Tabs value={activeTab} onValueChange={setActiveTab}>
+              <TabsList>
+                <TabsTrigger 
+                  value="attendance" 
+                  className={activeTab === "attendance" ? "data-[state=active]:bg-primary-600" : ""}
+                >
+                  Attendance
+                </TabsTrigger>
+                <TabsTrigger 
+                  value="grades" 
+                  className={activeTab === "grades" ? "data-[state=active]:bg-primary-600" : ""}
+                >
+                  Grades
+                </TabsTrigger>
+                <TabsTrigger 
+                  value="courses" 
+                  className={activeTab === "courses" ? "data-[state=active]:bg-primary-600" : ""}
+                >
+                  Courses
+                </TabsTrigger>
+                <TabsTrigger 
+                  value="students" 
+                  className={activeTab === "students" ? "data-[state=active]:bg-primary-600" : ""}
+                >
+                  Students
+                </TabsTrigger>
+              </TabsList>
+            </Tabs>
           </div>
         </CardHeader>
         <CardContent>
