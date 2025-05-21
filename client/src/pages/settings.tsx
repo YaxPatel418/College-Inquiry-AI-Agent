@@ -153,7 +153,10 @@ export default function Settings() {
   }
 
   const toggleTheme = () => {
-    setCurrentTheme(currentTheme === "light" ? "dark" : "light");
+    const newTheme = currentTheme === "light" ? "dark" : "light";
+    setCurrentTheme(newTheme);
+    // Also update localStorage to persist the change
+    localStorage.setItem("theme", newTheme);
   };
   
   // Effect to apply theme change
@@ -402,3 +405,4 @@ export default function Settings() {
     </div>
   );
 }
+
