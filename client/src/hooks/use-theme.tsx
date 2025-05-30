@@ -25,9 +25,13 @@ export function ThemeProvider({ children }: { children: ReactNode }) {
 
   useEffect(() => {
     const root = window.document.documentElement;
-    
     root.classList.remove("light", "dark");
-    root.classList.add(theme);
+    // Change theme color class to 'white' or 'blue' instead of 'dark'
+    if (theme === "dark") {
+      root.classList.add("blue"); // or use 'white' if you prefer
+    } else {
+      root.classList.add("light");
+    }
     localStorage.setItem("theme", theme);
   }, [theme]);
 
@@ -39,6 +43,7 @@ export function ThemeProvider({ children }: { children: ReactNode }) {
   return (
     <ThemeContext.Provider value={contextValue}>
       {children}
+      {/* CollegeInquiryForm removed. Use CollegeInquiryChat in your pages/components as needed. */}
     </ThemeContext.Provider>
   );
 }
